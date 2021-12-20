@@ -1,0 +1,27 @@
+{% set image = row._entity.field_image_segments.entity.fields.uri.value %}
+
+<div class="segments" style="background-image: url({{file_url(image)}});">
+
+	<div class="main-title text-center">
+		{{ row._entity.field_main_title.value }}
+	</div>
+	<div class="container">
+		<div class="row">
+			{% for item in row._entity.	field_content_segments %}
+				<div class="col-md-4">
+					<div class="image-icon">
+						<img src="{{file_url(item.entity.field_icon_segments.entity.fields.uri.value)}}" id="{{loop.index}}"/>
+				
+					<div class="title-segments">
+						{{item.entity.field_title_segments.value}}
+					</div>
+					{% for itens in item.entity.field_content_segments %}
+						<div class="content" id="{{loop.index}}">
+							{{itens.value}}</div>
+					{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<div>

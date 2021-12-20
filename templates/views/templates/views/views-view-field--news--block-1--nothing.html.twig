@@ -1,0 +1,22 @@
+<div class="title-customers text-center">
+	{{ row._entity.field_title_news.value }}
+</div>
+
+<div class="container">
+	<div class="row">
+		{% for item in row._entity.field_news_content %}
+			<div class="col-md-4">
+				<div class="image-news" style="background-image: url({{file_url(item.entity.field_image_news.entity.fields.uri.value)}});" id="{{loop_index}}">
+					{% for itens in item.entity.field_content_news %}
+						<div class="news-content" id="{{loop.index}}">
+							{{itens.value}}</div>
+					{% endfor %}
+					{% for itens in item.entity.field_date_news %}
+						<div class="date" id="{{loop.index}}">
+							{{itens.value}}</div>
+					{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

@@ -1,0 +1,13 @@
+<div class="flex-wrap">
+	{% for item in row._entity.	field_content_consultancy %}
+		<div class="flex-box">
+			<div class="banner" style="background-image: url({{file_url(item.entity.field_image_consultancy.entity.fields.uri.value)}});" id="{{loop_index}}">
+				<div class="image-icon">
+					<img src="{{file_url(item.entity.field_icon_consultancy.entity.fields.uri.value)}}" id="{{loop_index}}"/>
+					{{item.entity.field_title_consultancy.value}}
+				</div>
+				<div class="conteudo">{{item.entity.field_text_consultancy.value}}</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>

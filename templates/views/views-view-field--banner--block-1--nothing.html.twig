@@ -1,0 +1,12 @@
+{% set image = row._entity.field_banner.entity.fields.uri.value %}
+
+
+<div class="banner" style="background-image: url({{file_url(image)}});">
+	<div class="banner-texts">
+		<div class="banner-text-1">{{ row._entity.field_text_banner.value }}</div>
+		<div class="banner-text-2">{{ row._entity.field_text_banner_second.value }}</div>
+		<div class="banner-text-3">{{ row._entity.field_text_banner_third.value }}</div>
+		<div class="banner-text-4">{{ row._entity.field_text_banner_fourth.value }}</div>
+	</div>
+</div>
+

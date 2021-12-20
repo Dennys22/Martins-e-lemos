@@ -1,0 +1,25 @@
+
+<div class="main-title-differences text-center">
+	{{ row._entity.field_main_title_differences.value }}
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="differences-text">{{ row._entity.field_text_differences.value }}
+				{% for item in row._entity.field_content_differences %}
+					{% for itens in item.entity.field_list_differences %}
+						<div class="list-differences" id="{{loop.index}}">
+							{{itens.value}}</div>
+					{% endfor %}
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="image-differences col-md-6">
+				<img src="{{file_url(row._entity.field_image_differences.entity.fields.uri.value)}}">
+			</div>
+		</div>
+	</div>
+</div>

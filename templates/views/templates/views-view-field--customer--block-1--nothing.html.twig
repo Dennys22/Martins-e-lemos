@@ -1,0 +1,12 @@
+<div class="title-customers text-center">
+	{{ row._entity.field_title_customers.value }}
+</div>
+<div class="carousel-customer">
+	<div class="customer-carousel container">
+		{% for item in row._entity.	field_customer_client %}
+			<div class="image-customer">
+				<img src="{{file_url(item.entity.field_img_customer.entity.fields.uri.value)}}">
+			</div>
+		{% endfor %}
+	</div>
+</div>
