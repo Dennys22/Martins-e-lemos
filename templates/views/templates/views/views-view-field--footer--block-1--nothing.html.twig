@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<img src="{{file_url(row._entity.field_icon_footer.entity.fields.uri.value)}}">
+			<br>
+			<br>
+			{% for item in row._entity.field_icones_footer %}
+				<img src="{{file_url(item.entity.field_icons_footer.entity.fields.uri.value)}}" id="{{loop_index}}"/>
+			{% endfor %}
+		</div>
+		{% for item in row._entity.field_content_footer_paragrf %}
+			<div class="col-md-4">
+				{% for itens in item.entity.field_title_footer %}
+					<div class="title-footer" id="{{loop.index}}">
+						{{itens.value}}</div>
+				{% endfor %}
+				<br>
+				{% for itens in item.entity.field_content_footer %}
+					<div class="content-footer" id="{{loop.index}}">
+						{{itens.value}}</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<br>
+<div class="contact">
+	<div class="number-footer text-center">
+		<p>{{ row._entity.field_number_footer.value }}</p>
+	</div>
+	<div class="email-footer text-center">
+		<p>{{ row._entity.field_email_footer.value }}</p>
+	</div>
+	<div class="address-footer text-center">
+		<p>{{ row._entity.field_address_footer.value }}</p>
+	</div>
+</div>
